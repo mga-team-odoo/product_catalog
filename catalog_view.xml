@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    product_catalog module for OpenERP, Associate product in a multiple catalog
+        #    Copyright (C) 2013 MIROUNGA ([http://www.mirounga.fr/]) 
+        #              Christophe CHAUVET [christophe.chauvet@mirounga.fr]
+        #
+        #    This file is a part of product_catalog
+        #
+        #    product_catalog is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    product_catalog is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        <record id="view_product_catalog_tree" model="ir.ui.view">
+            <field name="name">product.catalog.tree</field>
+            <field name="model">product.catalog</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Catalog">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_catalog_form" model="ir.ui.view">
+            <field name="name">product.catalog.form</field>
+            <field name="model">product.catalog</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Catalog" version="7.0">
+                    <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name" string="Product Name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <notebook colspan="4">
+                            <page string="Information">
+                                <label for="active" string="Active"/>
+                                <field name="active"/>
+                                <field name="company_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_product_catalog_search" model="ir.ui.view">
+            <field name="name">product.catalog.search</field>
+            <field name="model">product.catalog</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Catalog">
+                    <field name="name" select="True"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_product_catalog_view">
+            <field name="name">Catalog</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.catalog</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_product_catalog_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+                Click to define a new catalog.
+              </p><p>
+                You must define a catalog to group products.
+              </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_product_catalog_view_form">
+            <field name="act_window_id" ref="act_open_product_catalog_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_product_catalog_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_product_catalog_view_tree">
+            <field name="act_window_id" ref="act_open_product_catalog_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_product_catalog_tree"/>
+        </record>
+
+        <menuitem id="menu_product_catalog"
+            parent="product.prod_config_main"
+            sequence="50"
+            action="act_open_product_catalog_view"/>
+
+    </data>
+</openerp>
