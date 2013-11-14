@@ -22,9 +22,15 @@
 #
 ##############################################################################
 
-import catalog
-import product
-#import report
-#import wizard
+from openerp.osv import orm
+from openerp.osv import fields
+
+
+class Product(orm.Model):
+    _inherit = 'product.product'
+
+    _columns = {
+        'catalog_ids': fields.many2many('product.catalog', 'product_catalog_rel', 'product_id', 'catalog_id', 'Catalogs', help='Associate catalog to this product'),
+    }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -32,6 +32,8 @@
             <field name="arch" type="xml">
                 <tree string="Catalog">
                     <field name="name"/>
+                    <field name="begin_date"/>
+                    <field name="end_date"/>
                 </tree>
             </field>
         </record>
@@ -54,9 +56,16 @@
                         </div>
                         <notebook colspan="4">
                             <page string="Information">
-                                <label for="active" string="Active"/>
-                                <field name="active"/>
-                                <field name="company_id"/>
+                                <group>
+                                    <group>
+                                        <field name="begin_date"/>
+                                        <field name="end_date"/>
+                                    </group>
+                                    <group>
+                                        <field name="company_id"/>
+                                        <field name="active"/>
+                                    </group>
+                                </group>
                             </page>
                         </notebook>
                     </sheet>
@@ -72,6 +81,8 @@
             <field name="arch" type="xml">
                 <search string="Catalog">
                     <field name="name" select="True"/>
+                    <field name="begin_date"/>
+                    <field name="end_date"/>
                 </search>
             </field>
         </record>
@@ -86,11 +97,11 @@
             <field name="domain">[]</field>
             <field name="context">{}</field>
             <field name="help" type="html">
-              <p class="oe_view_nocontent_create">
-                Click to define a new catalog.
-              </p><p>
-                You must define a catalog to group products.
-              </p>
+                <p class="oe_view_nocontent_create">
+                    Click to define a new catalog.
+                    </p><p>
+                    You must define a catalog to group products.
+                </p>
             </field>
         </record>
 

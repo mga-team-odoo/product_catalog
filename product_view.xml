@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        ##############################################################################
+        #
+        #    product_catalog module for OpenERP, Associate product in a multiple catalog
+        #    Copyright (C) 2013 MIROUNGA ([http://www.mirounga.fr/]) 
+        #              Christophe CHAUVET [christophe.chauvet@mirounga.fr]
+        #
+        #    This file is a part of product_catalog
+        #
+        #    product_catalog is free software: you can redistribute it and/or modify
+        #    it under the terms of the GNU Affero General Public License as published by
+        #    the Free Software Foundation, either version 3 of the License, or
+        #    (at your option) any later version.
+        #
+        #    product_catalog is distributed in the hope that it will be useful,
+        #    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        #    GNU Affero General Public License for more details.
+        #
+        #    You should have received a copy of the GNU Affero General Public License
+        #    along with this program.  If not, see [http://www.gnu.org/licenses/].
+        #
+        ##############################################################################
+
+        <record id="product_search_form_view_stock" model="ir.ui.view">
+            <field name="name">product.search.stock.form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='description']" position="before">
+                    <label for="catalog_ids" string="Catalog"/>
+                    <field name="catalog_ids" widget="many2many_tags" colspan="4"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -38,6 +38,7 @@
         #'security/ir.model.access.csv',
         #'view/menu.xml',
         'catalog_view.xml',
+        'product_view.xml',
         #'wizard/wizard.xml',
         #'report/report.xml',
     ],
