@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-13 21:46+0000\n"
-"PO-Revision-Date: 2013-11-13 21:46+0000\n"
+"POT-Creation-Date: 2013-11-14 09:35+0000\n"
+"PO-Revision-Date: 2013-11-14 09:35+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,13 +21,43 @@ msgid "Information"
 msgstr ""
 
 #. module: product_catalog
+#: field:product.catalog,end_date:0
+msgid "End date"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.model,name:product_catalog.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.catalog,begin_date:0
+msgid "Begin date"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.product,catalog_ids:0
+msgid "Catalogs"
+msgstr ""
+
+#. module: product_catalog
 #: field:product.catalog,name:0
 msgid "Name"
 msgstr ""
 
 #. module: product_catalog
-#: field:product.catalog,company_id:0
-msgid "Company"
+#: help:product.catalog,end_date:0
+msgid "End date of the catalog"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,begin_date:0
+msgid "Begin date of the catalog"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.product,catalog_ids:0
+msgid "Associate catalog to this product"
 msgstr ""
 
 #. module: product_catalog
@@ -44,21 +74,21 @@ msgstr ""
 #: model:ir.actions.act_window,name:product_catalog.act_open_product_catalog_view
 #: model:ir.ui.menu,name:product_catalog.menu_product_catalog
 #: view:product.catalog:0
+#: view:product.product:0
 msgid "Catalog"
 msgstr ""
 
 #. module: product_catalog
 #: model:ir.actions.act_window,help:product_catalog.act_open_product_catalog_view
 msgid "<p class=\"oe_view_nocontent_create\">\n"
-"                Click to define a new catalog.\n"
-"              </p><p>\n"
-"                You must define a catalog to group products.\n"
-"              </p>\n"
+"                    Click to define a new catalog.\n"
+"                    </p><p>\n"
+"                    You must define a catalog to group products.\n"
+"                </p>\n"
 "            "
 msgstr ""
 
 #. module: product_catalog
-#: view:product.catalog:0
 #: field:product.catalog,active:0
 msgid "Active"
 msgstr ""
@@ -71,5 +101,10 @@ msgstr ""
 #. module: product_catalog
 #: help:product.catalog,active:0
 msgid "If uncheck, the catalog is hidden"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.catalog,company_id:0
+msgid "Company"
 msgstr ""
 
