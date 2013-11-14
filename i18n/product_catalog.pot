@@ -1,0 +1,75 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* product_catalog
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-11-13 21:46+0000\n"
+"PO-Revision-Date: 2013-11-13 21:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_catalog
+#: view:product.catalog:0
+msgid "Information"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.catalog,name:0
+msgid "Name"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.catalog,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,name:0
+msgid "Name of the catalog"
+msgstr ""
+
+#. module: product_catalog
+#: view:product.catalog:0
+msgid "Product Name"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.actions.act_window,name:product_catalog.act_open_product_catalog_view
+#: model:ir.ui.menu,name:product_catalog.menu_product_catalog
+#: view:product.catalog:0
+msgid "Catalog"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.actions.act_window,help:product_catalog.act_open_product_catalog_view
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to define a new catalog.\n"
+"              </p><p>\n"
+"                You must define a catalog to group products.\n"
+"              </p>\n"
+"            "
+msgstr ""
+
+#. module: product_catalog
+#: view:product.catalog:0
+#: field:product.catalog,active:0
+msgid "Active"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.model,name:product_catalog.model_product_catalog
+msgid "Manage catalogs of products"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,active:0
+msgid "If uncheck, the catalog is hidden"
+msgstr ""
+
