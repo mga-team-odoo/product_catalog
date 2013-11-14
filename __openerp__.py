@@ -34,8 +34,8 @@
     ],
     'images': [],
     'data': [
-        #'security/groups.xml',
-        #'security/ir.model.access.csv',
+        'security/groups.xml',
+        'security/ir.model.access.csv',
         #'view/menu.xml',
         'catalog_view.xml',
         'product_view.xml',
