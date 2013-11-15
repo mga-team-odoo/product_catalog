@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 09:35+0000\n"
-"PO-Revision-Date: 2013-11-14 09:35+0000\n"
+"POT-Creation-Date: 2013-11-15 09:13+0000\n"
+"PO-Revision-Date: 2013-11-15 09:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,18 +16,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_catalog
+#: field:product.category.add.line,category_id:0
+msgid "Category"
+msgstr ""
+
+#. module: product_catalog
 #: view:product.catalog:0
 msgid "Information"
-msgstr ""
-
-#. module: product_catalog
-#: field:product.catalog,end_date:0
-msgid "End date"
-msgstr ""
-
-#. module: product_catalog
-#: model:ir.model,name:product_catalog.model_product_product
-msgid "Product"
 msgstr ""
 
 #. module: product_catalog
@@ -36,38 +31,64 @@ msgid "Begin date"
 msgstr ""
 
 #. module: product_catalog
-#: field:product.product,catalog_ids:0
-msgid "Catalogs"
-msgstr ""
-
-#. module: product_catalog
-#: field:product.catalog,name:0
-msgid "Name"
-msgstr ""
-
-#. module: product_catalog
-#: help:product.catalog,end_date:0
-msgid "End date of the catalog"
-msgstr ""
-
-#. module: product_catalog
-#: help:product.catalog,begin_date:0
-msgid "Begin date of the catalog"
-msgstr ""
-
-#. module: product_catalog
 #: help:product.product,catalog_ids:0
 msgid "Associate catalog to this product"
 msgstr ""
 
 #. module: product_catalog
-#: help:product.catalog,name:0
-msgid "Name of the catalog"
+#: model:ir.model,name:product_catalog.model_product_category_make_catalog
+msgid "Made catalog from categories"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.actions.act_window,name:product_catalog.action_add_to_catalog_wizard_view
+#: view:product.category.make.catalog:0
+msgid "Add to catalog"
+msgstr ""
+
+#. module: product_catalog
+#: view:product.category.make.catalog:0
+msgid "Are you sure you want to add those categories to this catalog ?"
 msgstr ""
 
 #. module: product_catalog
 #: view:product.catalog:0
 msgid "Product Name"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.category.add.line,category_id:0
+msgid "Product category"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,active:0
+msgid "If uncheck, the catalog is hidden"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.model,name:product_catalog.model_product_product
+msgid "Product"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.product,catalog_ids:0
+msgid "Catalogs"
+msgstr ""
+
+#. module: product_catalog
+#: model:ir.model,name:product_catalog.model_product_category_add_line
+msgid "Add line"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.catalog,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: product_catalog
+#: model:res.groups,name:product_catalog.group_product_catalog
+msgid "Product Catalog"
 msgstr ""
 
 #. module: product_catalog
@@ -94,17 +115,81 @@ msgid "Active"
 msgstr ""
 
 #. module: product_catalog
+#: view:product.category.make.catalog:0
+msgid "Create catalog from categories"
+msgstr ""
+
+#. module: product_catalog
+#: view:product.category.make.catalog:0
+#: field:product.category.make.catalog,category_ids:0
+msgid "Categories"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.catalog,name:0
+msgid "Name"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,end_date:0
+msgid "End date of the catalog"
+msgstr ""
+
+#. module: product_catalog
+#: view:product.catalog:0
+msgid "Add category to catalog"
+msgstr ""
+
+#. module: product_catalog
+#: view:product.catalog:0
+#: field:product.catalog,product_ids:0
+msgid "Products"
+msgstr ""
+
+#. module: product_catalog
+#: code:addons/product_catalog/wizard/categorie_into_catalog.py:48
+#, python-format
+msgid "Error"
+msgstr ""
+
+#. module: product_catalog
 #: model:ir.model,name:product_catalog.model_product_catalog
 msgid "Manage catalogs of products"
 msgstr ""
 
 #. module: product_catalog
-#: help:product.catalog,active:0
-msgid "If uncheck, the catalog is hidden"
+#: help:product.catalog,product_ids:0
+msgid "Product available on this catalog"
 msgstr ""
 
 #. module: product_catalog
-#: field:product.catalog,company_id:0
-msgid "Company"
+#: field:product.catalog,end_date:0
+msgid "End date"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,begin_date:0
+msgid "Begin date of the catalog"
+msgstr ""
+
+#. module: product_catalog
+#: help:product.catalog,name:0
+msgid "Name of the catalog"
+msgstr ""
+
+#. module: product_catalog
+#: field:product.category.add.line,wizard_id:0
+msgid "unknown"
+msgstr ""
+
+#. module: product_catalog
+#: view:product.category.make.catalog:0
+msgid "Cancel"
+msgstr ""
+
+#. module: product_catalog
+#: code:addons/product_catalog/wizard/categorie_into_catalog.py:48
+#, python-format
+msgid "No catalog ID found!"
 msgstr ""
 

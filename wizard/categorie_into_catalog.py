@@ -47,9 +47,9 @@ class CategoryCatalog(orm.TransientModel):
         if not catalog_id:
             raise osv.except_osv(_('Error'), _('No catalog ID found!'))
 
-        for cat_id in this.category_ids:
+        for line in this.category_ids:
             # Search all product on this category, to add them on this catalog
-            product_ids = product.search(cr, uid, [('categ_id', '=', cat_id.id)], context=context)
+            product_ids = product.search(cr, uid, [('categ_id', '=', line.category_id.id)], context=context)
             if product_ids:
                 vals = [(4, p) for p in product_ids]
                 catalog.write(cr, uid, catalog_id, {'product_ids': vals}, context=context)
