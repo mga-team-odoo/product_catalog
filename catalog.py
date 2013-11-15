@@ -36,6 +36,7 @@ class ProductCatalog(orm.Model):
         'company_id': fields.many2one('res.company', 'Company', help=''),
         'begin_date': fields.date('Begin date', help='Begin date of the catalog'),
         'end_date': fields.date('End date', help='End date of the catalog'),
+        'product_ids': fields.many2many('product.product', 'product_catalog_rel', 'catalog_id', 'product_id', 'Products', help='Product available on this catalog'),
     }
 
     _defaults = {

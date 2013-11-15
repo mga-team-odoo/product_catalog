@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    product_catalog module for OpenERP, Associate product in a multiple catalog
-#    Copyright (C) 2013 MIROUNGA (<http://www.mirounga.fr/>) 
+#    Copyright (C) 2013 MIROUNGA (<http://www.mirounga.fr/>)
 #              Christophe CHAUVET <christophe.chauvet@mirounga.fr>
 #
 #    This file is a part of product_catalog
@@ -22,6 +22,6 @@
 #
 ##############################################################################
 
-
+import categorie_into_catalog
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

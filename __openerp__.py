@@ -39,7 +39,7 @@
         #'view/menu.xml',
         'catalog_view.xml',
         'product_view.xml',
-        #'wizard/wizard.xml',
+        'wizard/categorie_into_catalog_view.xml',
         #'report/report.xml',
     ],
     'demo': [],
