@@ -25,7 +25,11 @@
         ##############################################################################
 
         <record id="group_product_catalog" model="res.groups">
-            <field name="name">Product Catalog</field>
+            <field name="name">Product Catalog / User</field>
+        </record>
+
+        <record id="group_product_catalog_manager" model="res.groups">
+            <field name="name">Product Catalog / Manager</field>
         </record>
 
     </data>

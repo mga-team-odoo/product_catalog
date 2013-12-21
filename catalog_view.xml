@@ -131,8 +131,9 @@
         </record>
 
         <menuitem id="menu_product_catalog"
-            parent="product.prod_config_main"
+            parent="base.menu_product"
             sequence="50"
+            groups="group_product_catalog,group_product_catalog_manager"
             action="act_open_product_catalog_view"/>
 
     </data>
