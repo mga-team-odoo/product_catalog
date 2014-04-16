@@ -1,7 +1,7 @@
 Product catalog
 ===============
 
-.. image:: https://travis-ci.org/mga-team/openerp-product_catalog.svg
+.. image:: https://travis-ci.org/mga-team/openerp-product_catalog.svg?branch=7.0
    :target: https://travis-ci.org/mga-team/openerp-product_catalog
 
 This module permit to organise products on different catalogs (paper edition, website)
