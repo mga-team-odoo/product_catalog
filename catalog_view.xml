@@ -27,7 +27,6 @@
         <record id="view_product_catalog_tree" model="ir.ui.view">
             <field name="name">product.catalog.tree</field>
             <field name="model">product.catalog</field>
-            <field name="type">tree</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Catalog">
@@ -41,7 +40,6 @@
         <record id="view_product_catalog_form" model="ir.ui.view">
             <field name="name">product.catalog.form</field>
             <field name="model">product.catalog</field>
-            <field name="type">form</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Catalog" version="7.0">
@@ -87,7 +85,6 @@
         <record id="view_product_catalog_search" model="ir.ui.view">
             <field name="name">product.catalog.search</field>
             <field name="model">product.catalog</field>
-            <field name="type">search</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Catalog">
