@@ -1,25 +1,26 @@
 language: python
+
 python:
   - "2.7"
+
+env:
+  - VERSION="7.0" ODOO_REPO="odoo/odoo"
+  - VERSION="7.0" ODOO_REPO="OCA/OCB"
 
 virtualenv:
   system_site_packages: true
 
-before_install:
- - sudo apt-get install -qq graphviz
-
-services:
-  - postgresql
-
-before_script:
-    - psql -c "CREATE USER openerp WITH PASSWORD 'mirounga';" -U postgres
-    - psql -c 'create database pcatalog with owner openerp;' -U postgres
-
 install:
-    - ./.travis_install_nightly.sh
+  - git clone https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
+  - travis_install_nightly
 
 script:
-    - ./.travis_test_script.sh
+  - travis_run_flake8
+  - travis_run_tests
+
+after_success:
+  coveralls
 
 notifications:
   email:
