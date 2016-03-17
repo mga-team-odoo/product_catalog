@@ -69,10 +69,11 @@
                                 </group>
                             </page>
                             <page string="Products">
-                                <field name="product_ids" colspan="4">
-                                    <tree>
-                                        <field name="default_code"/>
-                                        <field name="name"/>
+                                <field name="product_ids" colspan="4" widget="one2many">
+                                    <tree editable="top">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="chapter_id"/>
+                                        <field name="product_id"/>
                                     </tree>
                                 </field>
                             </page>
@@ -132,6 +133,78 @@
             sequence="50"
             groups="group_product_catalog,group_product_catalog_manager"
             action="act_open_product_catalog_view"/>
+
+        <record id="view_product_catalog_chapter_tree" model="ir.ui.view">
+            <field name="name">product.catalog.chapter.tree</field>
+            <field name="model">product.catalog.chapter</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <tree string="Catalog chapter">
+                    <field name="complete_name"/>
+                    <field name="print_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_product_catalog_chapter_form" model="ir.ui.view">
+            <field name="name">product.catalog.chapter.form</field>
+            <field name="model">product.catalog.chapter</field>
+            <field name="type">form</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <form string="Catalog chapter">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="sequence"/>
+                    <field name="print_name"/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_product_catalog_chapter_search" model="ir.ui.view">
+            <field name="name">product.catalog.chapter.search</field>
+            <field name="model">product.catalog.chapter</field>
+            <field name="type">search</field>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <search string="Catalog chapter">
+                    <field name="name"/>
+                    <field name="print_name"/>
+                    <field name="print_name"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="act_open_product_catalog_chapter_view">
+            <field name="name">Catalog Chapters</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.catalog.chapter</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_product_catalog_chapter_search"/>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_product_catalog_chapter_view_form">
+            <field name="act_window_id" ref="act_open_product_catalog_chapter_view"/>
+            <field name="sequence" eval="20"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_product_catalog_chapter_form"/>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="act_open_product_catalog_chapter_view_tree">
+            <field name="act_window_id" ref="act_open_product_catalog_chapter_view"/>
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_product_catalog_chapter_tree"/>
+        </record>
+
+        <menuitem id="menu_product_catalog_chapter"
+            parent="product.prod_config_main"
+            sequence="20"
+            action="act_open_product_catalog_chapter_view"/>
 
     </data>
 </openerp>

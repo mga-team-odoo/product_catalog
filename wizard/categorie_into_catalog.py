@@ -54,7 +54,12 @@ class CategoryCatalog(orm.TransientModel):
                 cr, uid, [('categ_id', '=', line.category_id.id)],
                 context=context)
             if product_ids:
-                vals = [(4, p) for p in product_ids]
+                vals = []
+                for p_id in product_ids:
+                    vals.append((0, 0, {
+                        'product_id': p_id,
+                        'chapter_id': line.chapter_id and line.chapter_id.id or False,
+                    }))
                 catalog.write(
                     cr, uid, catalog_id, {'product_ids': vals},
                     context=context)
@@ -71,6 +76,9 @@ class CategoryList(orm.TransientModel):
         'category_id': fields.many2one(
             'product.category', 'Category', required=True,
             help='Product category'),
+        'chapter_id': fields.many2one(
+            'product.catalog.chapter', 'CHapter',
+            help='Chapter to link products'),
     }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
