@@ -32,12 +32,12 @@
                     <field name="category_ids" nolabel="1" colspan="4">
                         <tree string="Categories" editable="bottom">
                             <field name="category_id"/>
+                            <field name="chapter_id"/>
                         </tree>
                     </field>
                     <footer>
                         <button icon="gtk-cancel" type="special" special="cancel" string="Cancel"/>
-                        <button icon="gtk-ok" string="Add to catalog" name="action_add_to_catalog" type="object"
-                            confirm="Are you sure you want to add those categories to this catalog ?"/>
+                        <button icon="gtk-ok" string="Add to catalog" name="action_add_to_catalog" type="object"/>
                     </footer>
                 </form>
             </field>

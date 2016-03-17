@@ -13,4 +13,4 @@ The name of this module must be *product_catalog*, see below the command line to
 
 ::
 
-    git clone https://github.com/mga-team/openerp-product_catalog.git
+    git clone https://github.com/mga-team-odoo/product_catalog.git

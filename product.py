@@ -30,9 +30,8 @@ class Product(orm.Model):
     _inherit = 'product.product'
 
     _columns = {
-        'catalog_ids': fields.many2many(
-            'product.catalog', 'product_catalog_rel',
-            'product_id', 'catalog_id', 'Catalogs',
+        'catalog_ids': fields.one2many(
+            'product.catalog.chapter.rel', 'product_id', 'Catalogs',
             help='Associate catalog to this product'),
     }
 
