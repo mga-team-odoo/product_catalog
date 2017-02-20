@@ -157,6 +157,7 @@
                     <field name="name"/>
                     <field name="parent_id"/>
                     <field name="sequence"/>
+                    <field name="color_html"/>
                     <field name="print_name"/>
                 </form>
             </field>
@@ -170,7 +171,6 @@
             <field name="arch" type="xml">
                 <search string="Catalog chapter">
                     <field name="name"/>
-                    <field name="print_name"/>
                     <field name="print_name"/>
                 </search>
             </field>
@@ -204,6 +204,7 @@
         <menuitem id="menu_product_catalog_chapter"
             parent="product.prod_config_main"
             sequence="20"
+            groups="group_product_catalog_manager"
             action="act_open_product_catalog_chapter_view"/>
 
     </data>

@@ -79,18 +79,22 @@ class ProductCatalogChapter(orm.Model):
         return dict(res)
 
     _columns = {
-        'name': fields.char('Name', size=128, required=True, help='Name of the chapter'),
-        'print_name': fields.char('Print name', size=128, help='Name appear on printing catalog'),
+        'name': fields.char('Name', size=128, required=True, translate=True,
+                            help='Name of the chapter'),
+        'print_name': fields.char('Print name', size=128, translate=True,
+                                  help='Name appear on printing catalog'),
         'parent_id': fields.many2one('product.catalog.chapter','Parent Chapter', select=True, ondelete='cascade'),
         'child_id': fields.one2many('product.catalog.chapter', 'parent_id', string='Child Chapters'),
         'complete_name': fields.function(_name_get_fnc, type="char", string='Name'),
         'sequence': fields.integer('Sequence', select=True, help="Gives the sequence order when displaying a list of catalog chapters."),
         'parent_left': fields.integer('Left Parent', select=1),
         'parent_right': fields.integer('Right Parent', select=1),
+        'color_html': fields.char('Color', size=7, help='Color in HTML like #FFFFFF'),
     }
 
     _defaults = {
         'sequence': 10,
+        'color_html': '#FFFFFF',
     }
 
     def _check_recursion(self, cr, uid, ids, context=None):
