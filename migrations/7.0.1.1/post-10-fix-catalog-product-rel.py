@@ -3,7 +3,7 @@
 #
 #   product_catalog module for OpenERP,
 #      Associate product in a multiple catalog
-#   Copyright (C) 2013 MIROUNGA (<http://www.mirounga.fr/>)
+#   Copyright (C) 2013-2017 MIROUNGA (<http://www.mirounga.fr/>)
 #             Christophe CHAUVET <christophe.chauvet@mirounga.fr>
 #
 #   This file is a part of product_catalog
@@ -23,32 +23,24 @@
 #
 ##############################################################################
 
-{
-    'name': 'Product Catalog',
-    'version': '1.1',
-    'category': 'Sale',
-    'description': """Associate product in a multiple catalog""",
-    'author': 'MIROUNGA',
-    'website': 'http://www.mirounga.fr/',
-    'depends': [
-        'product',
-    ],
-    'images': [],
-    'data': [
-        'security/groups.xml',
-        'security/ir.model.access.csv',
-        # 'view/menu.xml',
-        'wizard/categorie_into_catalog_view.xml',
-        'catalog_view.xml',
-        'product_view.xml',
-        # 'report/report.xml',
-    ],
-    'demo': [],
-    'test': [],
-    # 'external_dependancies': {'python': ['kombu'], 'bin': ['which']},
-    'installable': True,
-    'active': False,
-    'license': 'AGPL-3',
-}
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+import logging
+
+__name__ = "Move product catalog to the new relation table"
+_logger = logging.getLogger(__name__)
+
+
+def migrate(cr, v):
+    try:
+        cr.execute("""
+            INSERT INTO product_catalog_chapter_rel  (
+               create_uid, create_date, write_uid, write_date, chapter_id,
+               product_id, catalog_id, sequence
+            )
+            SELECT 1, now(), NULL, NULL, NULL,
+                   product_id, catalog_id, 10
+            FROM product_catalog_rel
+        """)
+    except Exception:
+        # Table product_catalog_rel doesn't existe, no data to migrate
+        pass
