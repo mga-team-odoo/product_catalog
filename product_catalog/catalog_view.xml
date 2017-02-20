@@ -137,7 +137,6 @@
         <record id="view_product_catalog_chapter_tree" model="ir.ui.view">
             <field name="name">product.catalog.chapter.tree</field>
             <field name="model">product.catalog.chapter</field>
-            <field name="type">tree</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <tree string="Catalog chapter">
@@ -150,7 +149,6 @@
         <record id="view_product_catalog_chapter_form" model="ir.ui.view">
             <field name="name">product.catalog.chapter.form</field>
             <field name="model">product.catalog.chapter</field>
-            <field name="type">form</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <form string="Catalog chapter">
@@ -166,7 +164,6 @@
         <record id="view_product_catalog_chapter_search" model="ir.ui.view">
             <field name="name">product.catalog.chapter.search</field>
             <field name="model">product.catalog.chapter</field>
-            <field name="type">search</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
                 <search string="Catalog chapter">
