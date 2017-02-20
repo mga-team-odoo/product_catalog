@@ -1,5 +1,5 @@
-Product modules
-================
+Product catalog
+===============
 
 .. image:: https://travis-ci.org/mga-team-odoo/product_catalog.svg?branch=7.0
    :target: https://travis-ci.org/mga-team-odoo/product_catalog
